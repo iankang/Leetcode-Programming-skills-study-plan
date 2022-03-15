@@ -7,7 +7,7 @@ fun sumOddLengthSubarrays(arr: IntArray): Int {
     arr.forEachIndexed { index, i ->
         if(index%2!=0){
             println("Index: $index")
-            for(j in 0 until index){
+            for(j in 0 .. index){
 //                sum+=arr[]
                 println(arr[j])
             }
