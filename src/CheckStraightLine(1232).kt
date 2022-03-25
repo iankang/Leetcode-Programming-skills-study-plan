@@ -46,16 +46,20 @@ fun main() {
 }
 
 fun checkStraightLine(coordinates: Array<IntArray>): Boolean {
+
     coordinates.forEachIndexed { index, tuple ->
-        if (index >1) {
-            return calculateGradient(
+        if (index > 1) {
+
+            if(!calculateGradient(
                 coordinates[0].first(),
                 coordinates[0].last(),
                 coordinates[1].first(),
                 coordinates[1].last(),
                 tuple[0],
                 tuple[1]
-            )
+            )){
+                return false
+            }
         }
     }
     return true
@@ -64,6 +68,6 @@ fun checkStraightLine(coordinates: Array<IntArray>): Boolean {
 fun calculateGradient(x0: Int, y0: Int, x1: Int, y1: Int, x: Int, y: Int): Boolean {
     val dy = y1.minus(y0)
     val dx = x1.minus(x0)
-    return dx.times(y.minus(y1)) != dy.times(x.minus(x1))
+    return dx.times(y.minus(y1)) == dy.times(x.minus(x1))
 
 }
