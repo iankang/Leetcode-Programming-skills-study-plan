@@ -6,7 +6,7 @@ class Node(var `val`: Int) {
     var children: List<Node?> = listOf()
 }
 
-fun preorderResult(root: Node?): List<Int> {
+fun preorder(root: Node?): List<Int>? {
     val results: MutableList<Int> = ArrayList()
     preorder(root, results)
     return results
