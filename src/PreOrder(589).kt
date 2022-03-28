@@ -1,5 +1,5 @@
 fun main() {
-    println(preorder())
+//    println(preorder())
 }
 
 class Node(var `val`: Int) {

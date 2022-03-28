@@ -3,23 +3,15 @@ fun main() {
 }
 
 fun sumOddLengthSubarrays(arr: IntArray): Int {
-    var sum: Int = 0
-    arr.forEachIndexed { index, i ->
-        if (index % 2 != 0) {
-            val start = index
-            var end = start.plus(index)
-            if(end>arr.size){
-                end = arr.size
+    var sum = 0
+    for (i in arr.indices) {
+        var j = i
+        while (j < arr.size) {
+            for (k in i..j) {
+                sum += arr[k]
             }
-            for(j in arr){
-
-            }
-            println("start: $start end:$end")
-            val sub = (index..end)
-                .map { sub:Int -> arr[sub] }
-                .toIntArray()
-            sub.forEach { subNum -> println(subNum) }
+            j += 2
         }
     }
-    return 0
+    return sum
 }
