@@ -2,13 +2,14 @@ fun main(){
     moveZeroes(intArrayOf(0,1,0,3,12))
 }
 
-fun moveZeroes(nums:IntArray):Unit{
-    nums.sort()
-    val zeros = nums.filter { num -> num == 0 }.count()
-    nums.dropWhile { num  -> num == 0 }
-    val count = nums.filterIndexedTo(nums.toMutableList()) { index: Int, i: Int ->
-        i == 0
+fun moveZeroes(nums: IntArray) {
+    var count = 0
+    for (i in nums.indices) {
+        if (nums[i] != 0) {
+            val x = nums[i]
+            nums[i] = nums[count]
+            nums[count] = x
+            count++
+        }
     }
-   count.drop(zeros)
-    println(count)
 }
