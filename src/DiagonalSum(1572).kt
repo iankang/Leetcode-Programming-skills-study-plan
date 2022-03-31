@@ -23,6 +23,5 @@ fun diagonalSum(mat: Array<IntArray>): Int {
         }
     }
 
-    val final = primary + secondary + centerVal
-    return final
+    return primary + secondary + centerVal
 }
